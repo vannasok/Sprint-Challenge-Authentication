@@ -23,7 +23,7 @@ describe('server', () => {
 				});
 		});
 
-		it('username should be {Name}', () => {
+		it('username should be {username}', () => {
 			return request(server)
 				.post('/api/auth/register')
 				.send({
