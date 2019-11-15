@@ -12,6 +12,10 @@ server.use(helmet());
 server.use(cors());
 server.use(express.json());
 
+server.get('/', (req, res) => {
+	res.status(200).json({ api: 'running', environment: process.env.DB_ENV });
+});
+
 server.use('/api/auth', authRouter);
 server.use('/api/jokes', authenticate, jokesRouter);
 
